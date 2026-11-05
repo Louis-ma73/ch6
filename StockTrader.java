@@ -15,6 +15,7 @@ public class StockTrader {
        double [] price = new double[];
 
         LoadDeta (in year, month, price);
+        printDeta (years, months, prices);
     }
     public static void loadDeta( Scanner in, int[] year, int[] month, double[] price);
            for (int i = 0; i<price.length; i++) {
@@ -25,8 +26,12 @@ public class StockTrader {
 }
     public static String monthName(int month){
        String[] names = {"Jan", "Fed", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"};
-       return names [month-1];
+      
+      if (month >= 1 && month<=12) {
+		  return names[month];
     }
+    return "Unknown";
+  }
     public static void printDeta (int[] years, int[] months, double[] price){
            for (int i =0; i<price.length; i++){
              System.out.println(year[i], month[i], price[i]);
